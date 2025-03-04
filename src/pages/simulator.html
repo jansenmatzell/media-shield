@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disinformation Simulator - MediaShield</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/simulator.css">
+</head>
+<body>
+  <header>
+    <!-- Same navigation as before -->
+  </header>
+  <main>
+    <section class="page-header">
+      <h1>Disinformation Simulator</h1>
+      <p>Experience how noise and signal strength affect information visibility</p>
+    </section>
+    <section class="content-container">
+      <div class="simulator-intro">
+        <p>This interactive tool demonstrates how disinformation tactics can affect the visibility of truthful information. Adjust the controls to see how increasing noise and decreasing signal strength can make it harder to identify accurate information.</p>
+      </div>
+      <div id="disinfo-simulator" class="simulator-container">
+        <!-- The simulator will be initialized here via JavaScript -->
+      </div>
+      <div class="simulator-explanation">
+        <h2>How It Works</h2>
+        <p>The simulator demonstrates the principles of Shannon's Information Theory applied to disinformation tactics:</p>
+        <ul>
+          <li><strong>Noise Level:</strong> Represents the amount of irrelevant or false information in the system. As noise increases, it becomes harder to distinguish truth from falsehood.</li>
+          <li><strong>Signal Strength:</strong> Represents the clarity and robustness of truthful information. Strong signals are more resistant to noise.</li>
+          <li><strong>Truth Messages:</strong> Factual information that becomes less visible as noise increases.</li>
+          <li><strong>False Messages:</strong> Misinformation that becomes more prominent as noise increases.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 MediaShield. All rights reserved.</p>
+  </footer>
+  <script src="../js/simulator.js"></script>
+</body>
+</html>

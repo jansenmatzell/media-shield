@@ -1,0 +1,93 @@
+.simulator-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .simulator-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .simulator-controls label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .simulator-controls input[type="range"] {
+    width: 100%;
+  }
+  
+  .simulator-controls button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .simulator-controls button:hover {
+    background-color: #2980b9;
+  }
+  
+  .message-feed {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+  
+  .messages-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 4px;
+    position: relative;
+    transition: opacity 0.3s;
+  }
+  
+  .message.truth {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+  }
+  
+  .message.false {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+  }
+  
+  .message.noise {
+    background-color: #e2e3e5;
+    border-left: 4px solid #6c757d;
+  }
+  
+  .message-type {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .simulator-intro, .simulator-explanation {
+    margin-bottom: 1.5rem;
+  }
+  
+  .simulator-explanation h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .simulator-explanation ul {
+    margin-left: 1.5rem;
+  }

@@ -1,0 +1,26 @@
+{
+  "name": "media-shield",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jansenmatzell/media-shield.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jansenmatzell/media-shield/issues"
+  },
+  "homepage": "https://github.com/jansenmatzell/media-shield#readme",
+  "description": "",
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "fs-extra": "^11.3.0",
+    "uglify-js": "^3.19.3"
+  }
+}
