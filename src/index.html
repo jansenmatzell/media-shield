@@ -3,98 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MediaShield provides tools and education to combat disinformation using information theory principles.">
-    <meta name="keywords" content="disinformation, misinformation, fake news, information theory, media literacy">
+    <meta name="description" content="MediaShield provides tools to evaluate news sources, check facts, and identify potential bias in online information.">
+    <meta name="keywords" content="fact-checking, media bias, disinformation, misinformation, news verification">
     <meta name="author" content="MediaShield Team">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mediashield.xyz/">
-    <meta property="og:title" content="MediaShield - Combat Disinformation with Information Theory">
-    <meta property="og:description" content="Learn about disinformation tactics and how to counter them with practical tools and education.">
+    <meta property="og:title" content="MediaShield - Verify News & Detect Media Bias">
+    <meta property="og:description" content="Analyze news articles for accuracy, bias, and credibility with our AI-powered tools.">
     <meta property="og:image" content="https://mediashield.xyz/images/og-image.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mediashield.org/">
-    <meta property="twitter:title" content="MediaShield - Combat Disinformation with Information Theory">
-    <meta property="twitter:description" content="Learn about disinformation tactics and how to counter them with practical tools and education.">
+    <meta property="twitter:title" content="MediaShield - Verify News & Detect Media Bias">
+    <meta property="twitter:description" content="Analyze news articles for accuracy, bias, and credibility with our AI-powered tools.">
     <meta property="twitter:image" content="https://mediashield.xyz/images/twitter-image.jpg">
     
-    <title>DisinfoShield - Combat Disinformation with Information Theory</title>
+    <title>MediaShield - Verify News & Detect Media Bias</title>
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/analyzer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  </head>
+</head>
 <body>
   <header>
     <nav>
       <div class="logo">MediaShield</div>
+      <button class="menu-toggle">☰</button>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="pages/about.html">About</a></li>
-        <li><a href="pages/countermeasures.html">Countermeasures</a></li>
+        <li><a href="pages/countermeasures.html">Learn</a></li>
         <li><a href="pages/resources.html">Resources</a></li>
         <li><a href="pages/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <!-- Inside the main element of index.html -->
-<section class="features">
-  <h2>Understanding Disinformation Tactics</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>Denial of Information</h3>
-      <p>How propagandists flood communication channels with noise to obscure truth.</p>
-      <a href="pages/denial-of-information.html">Learn More</a>
-    </div>
-    <div class="feature-card">
-      <h3>Deception & Mimicry</h3>
-      <p>How false narratives mimic credible communications to create confusion.</p>
-      <a href="pages/deception-mimicry.html">Learn More</a>
-    </div>
-    <div class="feature-card">
-      <h3>Disruption & Destruction</h3>
-      <p>How message overload overwhelms audience capacity to filter and verify.</p>
-      <a href="pages/disruption-destruction.html">Learn More</a>
-    </div>
-    <div class="feature-card">
-      <h3>Subversion</h3>
-      <p>How subtle distortions gradually shift narrative and erode trust.</p>
-      <a href="pages/subversion.html">Learn More</a>
-    </div>
-  </div>
-</section>
-<section class="tools-section">
-  <h2>Interactive Tools</h2>
-  <div class="tools-grid">
-    <div class="tool-card">
-      <h3>Disinformation Simulator</h3>
-      <p>Experience how noise affects information visibility in real-time.</p>
-      <a href="pages/simulator.html" class="btn">Try Simulator</a>
-    </div>
-    <div class="tool-card">
-      <h3>Source Checker</h3>
-      <p>Learn techniques to verify information sources effectively.</p>
-      <a href="pages/source-checker.html" class="btn">Coming Soon</a>
-    </div>
-  </div>
-</section>
+    <section class="analyzer-section">
+      <div class="analyzer-container">
+        <h1>Verify News & Detect Media Bias</h1>
+        <p class="analyzer-description">Paste a link to any news article to check its credibility, detect potential bias, and verify facts</p>
+        
+        <div class="analyzer-form">
+          <input type="url" id="article-url" placeholder="https://example.com/news-article" required>
+          <button id="analyze-button" class="btn primary-btn">
+            <i class="fas fa-search"></i> Analyze Article
+          </button>
+        </div>
+        
+        <div id="analyzer-results" class="hidden">
+          <div class="results-header">
+            <div id="article-meta">
+              <h2 id="article-title">Article Title Will Appear Here</h2>
+              <p id="article-source">Source: <span id="source-name">Publication Name</span></p>
+              <p id="article-date">Published: <span id="publish-date">Date</span></p>
+            </div>
+            <div id="article-image"></div>
+          </div>
+          
+          <div class="results-grid">
+            <div class="result-card" id="credibility-score">
+              <h3>Credibility Score</h3>
+              <div class="score-circle">
+                <span id="credibility-value">?</span><span class="percent">%</span>
+              </div>
+              <div class="score-details" id="credibility-details">
+                <!-- Details will be filled by JavaScript -->
+              </div>
+            </div>
+            
+            <div class="result-card" id="bias-analysis">
+              <h3>Political Bias</h3>
+              <div class="bias-meter">
+                <div class="bias-scale">
+                  <span class="bias-label left">Left</span>
+                  <div class="bias-bar">
+                    <div id="bias-indicator"></div>
+                  </div>
+                  <span class="bias-label right">Right</span>
+                </div>
+                <p id="bias-description">Analyzing political bias...</p>
+              </div>
+            </div>
+            
+            <div class="result-card" id="fact-check">
+              <h3>Fact Check Results</h3>
+              <div id="fact-check-results">
+                <!-- Will be filled by JavaScript -->
+                <p class="placeholder-text">Analyzing claims in the article...</p>
+              </div>
+            </div>
+            
+            <div class="result-card" id="source-background">
+              <h3>Source Information</h3>
+              <div id="source-details">
+                <!-- Will be filled by JavaScript -->
+                <p class="placeholder-text">Loading source information...</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="results-full">
+            <div class="result-card" id="article-analysis">
+              <h3>In-Depth Analysis</h3>
+              <div id="analysis-content">
+                <!-- Will be filled by JavaScript -->
+                <p class="placeholder-text">Performing in-depth analysis of the article content...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="loading-indicator" class="hidden">
+          <div class="spinner"></div>
+          <p>Analyzing article... This may take a few moments</p>
+        </div>
+        
+        <div id="error-message" class="hidden">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>There was an error analyzing this article. Please check the URL and try again.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="about-section">
-  <h2>About This Project</h2>
-  <p>The MediaShield platform applies information theory principles to combat disinformation techniques, educating users about tactics and providing practical countermeasures.</p>
-  <a href="pages/about.html" class="btn outline">Learn More</a>
-</section>
-    <section class="hero">
-      <h1>Combat Disinformation with Information Theory</h1>
-      <p>Learn about disinformation tactics and how to counter them</p>
-      <button>Explore Countermeasures and Tools</button>
+    <section class="features">
+      <h2>How MediaShield Works</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-balance-scale feature-icon"></i>
+          <h3>Source Reputation</h3>
+          <p>We evaluate news sources based on their historical accuracy, transparency, and professional standards.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-check-double feature-icon"></i>
+          <h3>Fact Verification</h3>
+          <p>Articles are cross-referenced with verified fact-checking organizations and trusted information sources.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-pie feature-icon"></i>
+          <h3>Bias Detection</h3>
+          <p>Our algorithms analyze language and framing to detect political bias and partisan perspectives.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-brain feature-icon"></i>
+          <h3>AI Analysis</h3>
+          <p>Advanced natural language processing analyzes context, sentiment, and logical consistency.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="tools-section">
+      <h2>Additional Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h3>Disinformation Simulator</h3>
+          <p>Experience how noise affects information visibility in real-time.</p>
+          <a href="pages/simulator.html" class="btn">Try Simulator</a>
+        </div>
+        <div class="tool-card">
+          <h3>Learn About Disinformation</h3>
+          <p>Understand common tactics used to spread false information online.</p>
+          <a href="pages/countermeasures.html" class="btn">Learn More</a>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 MediaShield. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>MediaShield</h3>
+        <p>Empowering critical media consumption through technology and education.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/countermeasures.html">Learn</a></li>
+          <li><a href="pages/resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 MediaShield. All rights reserved.</p>
+    </div>
   </footer>
   <script src="js/main.js"></script>
+  <script src="js/analyzer.js"></script>
 </body>
 </html>
